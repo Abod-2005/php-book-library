@@ -72,4 +72,4 @@ php-book-library/
 
 **Abod-2005**  
 Islamic University of Gaza — Faculty of Information Technology  
-Web 2 Practical · Assignment 2 · Semester 2 · 2024/2025
+Web 2 Practical · Assignment 2 
