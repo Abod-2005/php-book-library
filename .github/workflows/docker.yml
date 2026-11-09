@@ -1,0 +1,23 @@
+name: Docker build and smoke test
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t book-library:ci .
+      - name: Start container
+        run: docker run -d --name library -p 8080:8080 book-library:ci
+      - name: Check health and CRUD
+        run: |
+          for i in {1..30}; do curl -fsS http://localhost:8080/health.php && break; sleep 1; done
+          bash tests/smoke.sh http://localhost:8080
+      - name: Show container logs on failure
+        if: failure()
+        run: docker logs library
