@@ -1,17 +1,29 @@
-# Technical notes
+﻿# Technical Notes
 
-## Docker obstacle
+## Docker Challenge
 
-Docker and Compose were not installed on the local machine: the commands were not found. To verify the image despite this limitation, the existing GitHub Actions runner built it and ran a container on Linux. Its health endpoint returned OK and the HTTP CRUD smoke test passed. The local installation problem itself remains unresolved; install Docker Desktop and start its engine to run Compose locally.
+The main challenge was setting up Docker on Windows. Initially, the docker command was not recognized because Docker Desktop was not installed.
 
-## Git/GitHub lesson
+I installed Docker Desktop and used the WSL 2 backend. After installation, I successfully built the PHP application image and started the container using Docker Compose.
 
-Branching from the original main commit preserves the project history, and a pull request makes the Docker changes reviewable without changing main. Verify the account, repository and branch before publishing.
+The container passed its healthcheck, and the application was accessible at http://localhost:8080.
 
-## Verification
+A multi-stage build was not necessary because the application has no separate dependency installation or compilation stage.
 
-- PHP 8.4.13: syntax checks passed; PHP CLI session simulation passed for initial list, add, edit and delete.
-- [GitHub Actions run #2](https://github.com/Abod-2005/php-book-library/actions/runs/42618495958): Docker image built, container started, health endpoint returned OK, and HTTP CRUD smoke test passed. The run tested the PR merge commit based on e865f6e.
-- Docker Compose, Docker health status, local browser UI and screenshots of the local container remain untested. The CI health endpoint check is not the same as inspecting Docker's health status.
-- An earlier local HTTP connection was unavailable in the tool environment. The follow-up execution requiring expanded network access was rejected by automatic approval review.
-- GitHub warned that checkout v4 targets Node 20 and was forced to run on Node 24; the workflow still passed.
+## Git and GitHub Lesson
+
+I learned how to use feature branches to develop changes without directly modifying the main branch.
+
+I also learned how to organize commits, open a pull request, and use GitHub Actions to automatically verify Docker builds and application functionality.
+
+## Verification Results
+
+- PHP syntax checks passed.
+- Docker image built successfully.
+- Docker Compose started the application successfully.
+- Container status: healthy.
+- Browser access at http://localhost:8080 succeeded.
+- Book creation, editing and deletion were tested successfully.
+- GitHub Actions Docker build and HTTP CRUD tests passed.
+- Pull Request #1 was created from feat/dockerize-library to main.
+- Docker and browser screenshots were captured for submission.
