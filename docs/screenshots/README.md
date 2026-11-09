@@ -1,9 +1,8 @@
-# Evidence needed
+# Evidence
 
-Place genuine screenshots here after running the project and publishing it:
-1. Docker build success in a terminal.
-2. Running container (docker compose ps).
-3. Working application in the browser, ideally showing a CRUD result.
-4. GitHub commit history.
+- docker-build-ci.jpg: actual GitHub Actions Docker build log, showing the image exported successfully.
+- docker-run-crud-ci.jpg: actual CI log showing the container starting and the HTTP health and CRUD checks passing.
+- github-actions-success.jpg: successful CI job overview.
+- github-commits.jpg: GitHub commit history showing new and older commits.
 
-Include the same screenshots in the submission PDF. None were fabricated.
+These are CI screenshots, not local Docker Desktop screenshots. A local running-container status screenshot and a browser screenshot of the working application remain to be captured. Include the required screenshots in the final PDF.

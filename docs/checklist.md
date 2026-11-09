@@ -1,22 +1,21 @@
 # Assignment checklist
 
 ## Required
-- [x] Meaningful existing project selected; add, edit, delete preserved and exercised via PHP CLI session simulation.
-- [x] Source, README, Dockerfile, .dockerignore, .gitignore, docs and screenshots directory prepared.
-- [x] Dockerfile specifies PHP runtime, working directory, limited copy and command. No application packages required.
-- [x] README covers stack, Docker build/run, configuration, testing, stop/cleanup, and attribution.
-- [x] Multiple meaningful local commits and technical notes.
-- [ ] Retain the original repository and its history; push a feature branch and open a pull request.
-- [ ] Docker build/run and full browser verification.
-- [ ] Screenshots: successful build, running container, working app and GitHub commit history; include the same screenshots here and in the PDF.
-- [ ] Submit the completed PDF with the real full name and student ID.
-- [ ] Confirm licensing: upstream has no declared license. Owner must decide whether to add one; do not invent a license.
+- [x] Existing meaningful application retained; add/edit/delete verified by CI HTTP smoke test.
+- [x] Source, README, Dockerfile, .dockerignore, .gitignore, docs and screenshots directory.
+- [x] Dockerfile provides the runtime, working directory, limited copy and command; no app packages required.
+- [x] README covers stack, Docker, configuration, testing, cleanup and attribution.
+- [x] Existing history preserved, feature branch pushed and pull request opened.
+- [x] Multiple meaningful commits and technical notes.
+- [x] Docker image built and container tested in GitHub Actions.
+- [ ] Test Docker Compose and the full UI locally; capture a running-container status and working app screenshot.
+- [ ] Complete the PDF with full name, student ID and all evidence; keep matching screenshots here.
+- [ ] Decide whether to add a license; none was declared in the original repository.
 
 ## Bonuses
-- [x] Compose configuration prepared.
-- [x] GitHub Actions build and CRUD smoke workflow prepared; execution pending.
-- [ ] Multi-stage build: intentionally omitted, no build artifacts or install dependencies to separate.
-- [x] Health endpoint and Docker healthcheck prepared; container verification pending.
+- [x] Compose configuration prepared; local verification pending.
+- [x] GitHub Actions image build and CRUD smoke test passed.
+- [ ] Multi-stage: intentionally omitted; there are no build artifacts or dependencies to separate.
+- [x] Health endpoint and Docker HEALTHCHECK configured. HTTP endpoint passed in CI; Docker health status still needs inspection.
 - [x] Makefile prepared.
-- [ ] Open a pull request with real screenshots when available; retain it for review.
-
+- [x] Feature branch and open pull request.
